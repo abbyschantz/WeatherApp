@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="app_add_item_name">Add a new item</string>
+    <string-array name="category">
+        <item>Food</item>
+        <item>Electronic</item>
+        <item>Book</item>
+        <item>Gift</item>
+        <item>Health</item>
+        <item>Clothes</item>
+        <item>Other</item>
+    </string-array>
+</resources>

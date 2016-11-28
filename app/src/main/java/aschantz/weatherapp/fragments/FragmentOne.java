@@ -6,7 +6,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import aschantz.weatherapp.R;
 import aschantz.weatherapp.WeatherDetails;
@@ -34,6 +37,11 @@ public class FragmentOne extends Fragment {
         String cityNameResult = activity.getWeatherResult().getName();
         TextView tvCityName = (TextView) rootView.findViewById(R.id.tvCityName);
         tvCityName.setText(cityNameResult);
+
+        ImageView imageView = (ImageView) rootView.findViewById(R.id.imageWeather);
+        String iconID = ((WeatherDetails)getActivity()).getWeatherResult().getWeather().get(0).getIcon();
+        Glide.with(this).load("http://openweathermap.org/img/w/"+ iconID + ".png").into(imageView);
+
         return rootView;
 
 

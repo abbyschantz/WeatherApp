@@ -1,13 +1,24 @@
 <resources>
     <string name="app_name">WeatherApp</string>
-    <string name="app_add_item_name">Add a new item</string>
-    <string-array name="category">
-        <item>Food</item>
-        <item>Electronic</item>
-        <item>Book</item>
-        <item>Gift</item>
-        <item>Health</item>
-        <item>Clothes</item>
-        <item>Other</item>
-    </string-array>
+    <string name="app_add_item_name">Add a new city</string>
+    <string name="addHint">Enter a city here</string>
+    <string name="add">Add a City</string>
+    <string name="enter_city_here">Enter city here</string>
+    <string name="delete">Delete</string>
+    <string name="na">N/A</string>
+
+    <string name="sunrise">sunrise: </string>
+    <string name="sunset">sunset: </string>
+    <string name="humidity">humidity: </string>
+    <string name="pressure">pressure: </string>
+    <string name="mintemp">min temp: </string>
+    <string name="maxtemp">max temp: </string>
+    <string name="curtemp">current temp: "</string>
+    <string name="lon">lon: </string>
+    <string name="lat">lat: </string>
+    <string name="timeAMPM">hh:mm aaa</string>
+    <string name="date">EEE, d MMM yyyy</string>
+    <string name="dt">dt: </string>
+
+
 </resources>

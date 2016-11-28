@@ -21,16 +21,18 @@
 
         <EditText
             android:id="@+id/etCity"
-            android:hint="Enter item here"
+            android:hint="@string/enter_city_here"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/btnAdd"
-            android:text="Add item"
+            android:text="@string/add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
+
 
     </LinearLayout>
 

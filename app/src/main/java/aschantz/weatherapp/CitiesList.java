@@ -64,7 +64,7 @@ public class CitiesList extends AppCompatActivity implements EditInferface {
     private GoogleApiClient client;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cities_list);
 
@@ -75,7 +75,6 @@ public class CitiesList extends AppCompatActivity implements EditInferface {
 
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
-        //////////////navigation//////////////
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(
@@ -88,8 +87,8 @@ public class CitiesList extends AppCompatActivity implements EditInferface {
                                 drawerLayout.closeDrawer(GravityCompat.START);
                                 break;
                             case R.id.action_about:
-                                //showSnackBarMessage(getString(R.string.txt_about));
                                 drawerLayout.closeDrawer(GravityCompat.START);
+                                Toast.makeText(CitiesList.this, getString(R.string.txt_about), Toast.LENGTH_LONG).show();
                                 break;
                             case R.id.action_help:
                                 //showSnackBarMessage(getString(R.string.txt_help));
@@ -102,10 +101,6 @@ public class CitiesList extends AppCompatActivity implements EditInferface {
 
                 });
         setUpToolBar();
-
-
-
-        //////////////end navigation//////////////
 
 
     }
@@ -132,7 +127,6 @@ public class CitiesList extends AppCompatActivity implements EditInferface {
     }
 
     private void setupUI() {
-        //setupToolbar();
 
         setupFloatingActionButton();
 
@@ -194,18 +188,6 @@ public class CitiesList extends AppCompatActivity implements EditInferface {
         }
     }
 
-//    private void setupToolbar() {
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//    }
-
-    ////////////////navigation////////////////
-
-
-
-
-
-    ////////////////END navigation ////////////////
 
     private void setupAddItem() {
         final EditText etCity = (EditText) findViewById(R.id.etCity);

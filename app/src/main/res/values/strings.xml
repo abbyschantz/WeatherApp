@@ -7,6 +7,9 @@
     <string name="enter_city_here">Enter city here</string>
     <string name="delete">Delete</string>
     <string name="na">N/A</string>
+    <string name="txt_about">An app by Abby Schantz: abby.schantz@gmail.com</string>
+    <string name="action_hide">Hide</string>
+
 
     <string name="sunrise">sunrise: </string>
     <string name="sunset">sunset: </string>

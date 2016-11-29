@@ -21,16 +21,12 @@ import aschantz.weatherapp.data.Cities;
 /**
  * Created by aschantz on 11/27/16.
  */
-public class CityRecyclerAdapter extends RecyclerView.Adapter<CityRecyclerAdapter.ViewHolder> implements CityInterfaceTouchHelperAdapter{
+public class CityRecyclerAdapter extends RecyclerView.Adapter<CityRecyclerAdapter.ViewHolder> implements CityInterfaceTouchHelperAdapter {
 
 
     private List<Cities> cityList;
-    private EditInferface editInterface;
 
     public CityRecyclerAdapter(EditInferface editInterface) {
-        //for sugar
-
-        this.editInterface = editInterface;
 
         cityList = Cities.listAll(Cities.class);
 
@@ -38,27 +34,15 @@ public class CityRecyclerAdapter extends RecyclerView.Adapter<CityRecyclerAdapte
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        //use the layout inflator and return a new holder with the inflator view
         View cityRow = LayoutInflater.from(parent.getContext()).inflate(
                 R.layout.city_row, null, false);
         return new ViewHolder(cityRow);
     }
 
-    //where we add the data to the rows
-    //called by the system as many items Android wants to load in the memory
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.tvCity.setText(cityList.get(holder.getAdapterPosition()).getItemTitle());
 
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                // click...
-//                Intent intent = new Intent();
-//                intent.setClass(view.getContext(),WeatherDetails.class);
-//                view.getContext().startActivity(intent);
-//            }
-//        });
 
         holder.tvCity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,8 +52,6 @@ public class CityRecyclerAdapter extends RecyclerView.Adapter<CityRecyclerAdapte
                 String cityName = cityList.get(holder.getAdapterPosition()).getItemTitle();
                 intent.putExtra("cityName", cityName);
                 v.getContext().startActivity(intent);
-//                editInterface.showEditDialog(
-//                        cityList.get(holder.getAdapterPosition()), holder.getAdapterPosition());
             }
         });
 
@@ -83,18 +65,14 @@ public class CityRecyclerAdapter extends RecyclerView.Adapter<CityRecyclerAdapte
 
     }
 
-    //returns how many items we have
-    //if you leave this at 0, you will always have an empty list
     @Override
     public int getItemCount() {
         return cityList.size();
     }
 
 
-    //remove item from object list and refresh recycler view with its location
     @Override
     public void onItemDismiss(int position) {
-        //for sugar
         cityList.get(position).delete();
 
         cityList.remove(position);
@@ -104,7 +82,6 @@ public class CityRecyclerAdapter extends RecyclerView.Adapter<CityRecyclerAdapte
     @Override
     public void onItemMove(int fromPosition, int toPosition) {
 
-        //same as above but using add and remove
         cityList.add(toPosition, cityList.get(fromPosition));
         cityList.remove(fromPosition);
 
@@ -112,7 +89,7 @@ public class CityRecyclerAdapter extends RecyclerView.Adapter<CityRecyclerAdapte
 
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tvCity;
         public Button btnDelete;
@@ -129,8 +106,8 @@ public class CityRecyclerAdapter extends RecyclerView.Adapter<CityRecyclerAdapte
 
     }
 
-    public void addCity(Cities city){
-        city.save(); //sugar
+    public void addCity(Cities city) {
+        city.save();
         cityList.add(0, city);
 
 

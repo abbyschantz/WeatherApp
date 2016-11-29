@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     public void openWeatherDetailsActivity(View view) {
         Intent intent = new Intent();
         intent.setClass(MainActivity.this, WeatherDetails.class);
+        intent.putExtra("cityName","Budapest");
         startActivity(intent);
     }
 

@@ -37,11 +37,11 @@ public class FragmentTwo extends Fragment {
         String maxTemp = ""+activity.getWeatherResult().getMain().getTempMax()+"°";
         String currentTemp = ""+activity.getWeatherResult().getMain().getTemp()+"°";
 
-        String humidity = getString(R.string.humidity)+activity.getWeatherResult().getMain().getHumidity();
+        String humidity = ""+activity.getWeatherResult().getMain().getHumidity()+"%";
         String pressure = getString(R.string.pressure)+activity.getWeatherResult().getMain().getPressure();
         String lon = getString(R.string.lon)+activity.getWeatherResult().getCoord().getLon();
         String lat = getString(R.string.lat)+activity.getWeatherResult().getCoord().getLat();
-        String wind = activity.getWeatherResult().getWind().toString();
+        String wind = ""+activity.getWeatherResult().getWind().getSpeed();
 
         Integer sunriseStamp = activity.getWeatherResult().getSys().getSunrise();
         Integer sunsetStamp = activity.getWeatherResult().getSys().getSunset();

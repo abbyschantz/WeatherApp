@@ -3,6 +3,7 @@ package aschantz.weatherapp.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,7 @@ public class FragmentOne extends Fragment {
         String tempResult = ""+activity.getWeatherResult().getMain().getTemp();
         Double tempDouble = activity.getWeatherResult().getMain().getTemp();
         String desc = activity.getWeatherResult().getWeather().get(0).getDescription();
+        Log.d("desc", desc);
         Integer dateResult = activity.getWeatherResult().getDt();
 
         TextView tvTemp = (TextView) rootView.findViewById(R.id.tvCurrentTempResult);

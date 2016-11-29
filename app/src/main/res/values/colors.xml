@@ -4,10 +4,12 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#c7c3c4</color>
     <color name="darkG">#494848</color>
+    <color name="darkerG">#353434</color>
     <color name="night">#4f0b74</color>
     <color name="sunrise">#f4ca82</color>
     <color name="hot">#ed3329</color>
     <color name="cold">#6aadda</color>
     <color name="white">#ffffff</color>
     <color name="topOfBar">#aeabab</color>
+    <color name="buttonG">#D6D7D7</color>
 </resources>

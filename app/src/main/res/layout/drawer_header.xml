@@ -9,11 +9,12 @@
         android:scaleType="centerCrop"/>
 
     <TextView
-        android:text="drawer header"
+        android:text="@string/drawer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:textColor="@color/darkG"
+        android:textColor="@color/buttonG"
+        android:background="@color/darkerG"
         android:textSize="18sp"
         android:textStyle="bold"/>
 

@@ -71,6 +71,8 @@ public class CitiesList extends AppCompatActivity implements EditInferface {
         setupUI();
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
+
+
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
         //////////////navigation//////////////
@@ -113,7 +115,7 @@ public class CitiesList extends AppCompatActivity implements EditInferface {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationIcon(R.mipmap.ic_launcher);
+        toolbar.setNavigationIcon(R.drawable.nav);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

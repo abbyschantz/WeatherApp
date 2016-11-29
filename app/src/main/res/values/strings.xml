@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">WeatherApp</string>
+    <string name="drawer">Weather App Navigation</string>
     <string name="app_add_item_name">Add a new city</string>
     <string name="addHint">Enter a city here</string>
-    <string name="add">Add a City</string>
+    <string name="add">Add City</string>
     <string name="enter_city_here">Enter city here</string>
     <string name="delete">Delete</string>
     <string name="na">N/A</string>

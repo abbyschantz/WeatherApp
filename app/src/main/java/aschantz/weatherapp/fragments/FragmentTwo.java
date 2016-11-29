@@ -74,11 +74,11 @@ public class FragmentTwo extends Fragment {
         TextView windResult = (TextView) rootView.findViewById(R.id.tvWindResult);
         windResult.setText(wind);
 
-        TextView lonResult = (TextView) rootView.findViewById(R.id.tvLonResult);
-        lonResult.setText(lon);
+        //TextView lonResult = (TextView) rootView.findViewById(R.id.tvLonResult);
+        //lonResult.setText(lon);
 
-        TextView latResult = (TextView) rootView.findViewById(R.id.tvLatResult);
-        latResult.setText(lat);
+        //TextView latResult = (TextView) rootView.findViewById(R.id.tvLatResult);
+        //latResult.setText(lat);
 
         String cityNameResult = activity.getWeatherResult().getName();
         TextView tvCityName = (TextView) rootView.findViewById(R.id.tvCityName);

@@ -5,21 +5,34 @@
     android:layout_margin="10dp"
     android:padding="5dp"
     android:id="@+id/cityRow"
+    android:background="@drawable/border"
     android:orientation="horizontal"
     >
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/tvCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"/>
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:textColor="@color/buttonG"
+        android:paddingLeft="10dp"
+        android:textAllCaps="true"
+        android:textSize="20sp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
         android:id="@+id/btnDelete"
-        android:text="@string/delete"/>
+        android:background="@drawable/gx" />
+
+</RelativeLayout>
+
 
 
 </LinearLayout>

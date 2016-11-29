@@ -23,6 +23,7 @@ import aschantz.weatherapp.data.Cities;
  */
 public class CityRecyclerAdapter extends RecyclerView.Adapter<CityRecyclerAdapter.ViewHolder> implements CityInterfaceTouchHelperAdapter{
 
+
     private List<Cities> cityList;
     private EditInferface editInterface;
 
@@ -46,7 +47,7 @@ public class CityRecyclerAdapter extends RecyclerView.Adapter<CityRecyclerAdapte
     //where we add the data to the rows
     //called by the system as many items Android wants to load in the memory
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.tvCity.setText(cityList.get(holder.getAdapterPosition()).getItemTitle());
 
 //        holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +70,14 @@ public class CityRecyclerAdapter extends RecyclerView.Adapter<CityRecyclerAdapte
                 v.getContext().startActivity(intent);
 //                editInterface.showEditDialog(
 //                        cityList.get(holder.getAdapterPosition()), holder.getAdapterPosition());
+            }
+        });
+
+        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                deleteCity(position);
             }
         });
 
@@ -106,11 +115,13 @@ public class CityRecyclerAdapter extends RecyclerView.Adapter<CityRecyclerAdapte
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
         private TextView tvCity;
+        public Button btnDelete;
 
 
         public ViewHolder(View itemView) {
             super(itemView);
             tvCity = (TextView) itemView.findViewById(R.id.tvCity);
+            btnDelete = (Button) itemView.findViewById(R.id.btnDelete);
 
 
         }
@@ -126,9 +137,10 @@ public class CityRecyclerAdapter extends RecyclerView.Adapter<CityRecyclerAdapte
         notifyItemInserted(0);
     }
 
-    public void deleteCity(Cities city) {
-        city.delete();
-        cityList.remove(city);
+    public void deleteCity(int index) {
+        cityList.get(index).delete();
+        cityList.remove(index);
+        notifyDataSetChanged();
     }
 
     public void edit(Cities city, int position) {

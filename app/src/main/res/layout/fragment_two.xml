@@ -7,56 +7,57 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
+            android:id="@+id/tvCityName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tvCityName"
             android:gravity="center_horizontal"
-            android:textStyle="normal"
             android:paddingTop="20dp"
+            android:text="BUDAPEST"
             android:textSize="40dp"
-            android:text="BUDAPEST"/>
+            android:textStyle="normal" />
 
 
         <TextView
+            android:id="@+id/tvDt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="december"
-            android:textSize="20dp"
-            android:id="@+id/tvDt"/>
+            android:textSize="20dp" />
 
         <LinearLayout
             android:id="@+id/temps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="20dp"
+            android:layout_gravity="center_horizontal"
             android:orientation="horizontal"
-            android:layout_gravity="center_horizontal">
+            android:paddingTop="20dp">
 
             <TextView
                 android:id="@+id/tvMinTempResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="bottom"
                 android:layout_gravity="bottom"
-                android:textSize="35sp"/>
+                android:gravity="bottom"
+                android:textSize="35sp" />
 
             <TextView
                 android:id="@+id/tvCurrentTempResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:paddingRight="15dp"
                 android:paddingLeft="15dp"
-                android:textSize="80sp"/>
+                android:paddingRight="15dp"
+                android:textSize="80sp" />
 
             <TextView
                 android:id="@+id/tvMaxTempResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:textSize="35sp"/>
+                android:textSize="35sp" />
 
         </LinearLayout>
 
@@ -64,46 +65,49 @@
             android:id="@+id/suns"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="20dp"
             android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="20dp">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/sunrise"/>
+                android:src="@drawable/sunrise" />
+
             <TextView
                 android:id="@+id/tvSunriseResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:paddingRight="30dp"
-                android:textSize="30sp"/>
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/tvSunsetResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="10dp"
-                android:textSize="30sp"/>
+                android:textSize="30sp" />
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/sunset"/>
+                android:src="@drawable/sunset" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="20dp"
+            android:gravity="center_horizontal"
             android:orientation="horizontal"
-            android:gravity="center_horizontal">
+            android:paddingTop="20dp">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/rain"/>
+                android:src="@drawable/rain" />
+
             <TextView
                 android:id="@+id/tvHumidityResult"
                 android:layout_width="wrap_content"
@@ -118,17 +122,13 @@
                 android:layout_height="wrap_content"
                 android:paddingRight="10dp"
                 android:textSize="30sp" />
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/wind"/>
+                android:src="@drawable/wind" />
 
         </LinearLayout>
-
-
-
-
-
 
 
         <!--<LinearLayout

@@ -45,7 +45,6 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
         return "Main";
     }
 
-    //return the number of pages you have, otherwise it will not display any pages
     @Override
     public int getCount() {
         return 2;

@@ -36,14 +36,14 @@ public class FragmentOne extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_one, null);
         WeatherDetails activity = (WeatherDetails) getActivity();
-        String tempResult = ""+activity.getWeatherResult().getMain().getTemp();
+        String tempResult = "" + activity.getWeatherResult().getMain().getTemp();
         Double tempDouble = activity.getWeatherResult().getMain().getTemp();
         String desc = activity.getWeatherResult().getWeather().get(0).getDescription();
         Log.d("desc", desc);
         Integer dateResult = activity.getWeatherResult().getDt();
 
         TextView tvTemp = (TextView) rootView.findViewById(R.id.tvCurrentTempResult);
-        tvTemp.setText(tempResult+"°");
+        tvTemp.setText(tempResult + "°");
 
         TextView descResult = (TextView) rootView.findViewById(R.id.descResult);
         descResult.setText(desc);
@@ -55,13 +55,13 @@ public class FragmentOne extends Fragment {
         TextView tvCityName = (TextView) rootView.findViewById(R.id.tvCityName);
         tvCityName.setText(cityNameResult);
 
-        String dtConverted = ""+convertDate(dateResult, date);
+        String dtConverted = "" + convertDate(dateResult, date);
         TextView dtResult = (TextView) rootView.findViewById(R.id.date);
         dtResult.setText(dtConverted);
 
         ImageView imageView = (ImageView) rootView.findViewById(R.id.imageWeather);
-        String iconID = ((WeatherDetails)getActivity()).getWeatherResult().getWeather().get(0).getIcon();
-        Glide.with(this).load("http://openweathermap.org/img/w/"+ iconID + ".png").into(imageView);
+        String iconID = ((WeatherDetails) getActivity()).getWeatherResult().getWeather().get(0).getIcon();
+        Glide.with(this).load("http://openweathermap.org/img/w/" + iconID + ".png").into(imageView);
 
         return rootView;
 
@@ -70,12 +70,11 @@ public class FragmentOne extends Fragment {
 
     private String convertDate(Integer timestamp, String dateType) {
         try {
-            long timestampLong = Long.valueOf(timestamp)*1000;
+            long timestampLong = Long.valueOf(timestamp) * 1000;
             DateFormat dateTime = new SimpleDateFormat(dateType);
             Date dateTimestamp = (new Date(timestampLong));
             return dateTime.format(dateTimestamp);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             return getString(R.string.na);
         }
     }

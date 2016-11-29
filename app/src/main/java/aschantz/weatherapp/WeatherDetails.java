@@ -43,48 +43,33 @@ public class WeatherDetails extends AppCompatActivity {
         cityName = getName.getString("cityName");
 
 
-        ///TRYING FOR DATA////
-
-        //create a retrofit object that reps one server communication
         Retrofit retrofit = new Retrofit.Builder().baseUrl("http://api.openweathermap.org").
                 addConverterFactory(GsonConverterFactory.create()).build();
         final WeatherApi weatherApi = retrofit.create(WeatherApi.class);
 
-        //tvResult = (TextView) findViewById(R.id.tvResult);
-        //final EditText etMoney = (EditText) findViewById(R.id.etMoney);
-        //Button btnGetRates = (Button) findViewById(R.id.btnGetRates);
-        //btnGetRates.setOnClickListener(new View.OnClickListener() {
-            //@Override
-            //public void onClick(View view) {
-                Call<WeatherResult> call = weatherApi.getWeatherBudapest(cityName, units, appid);
-                call.enqueue(new Callback<WeatherResult>() {
-                    @Override
-                    public void onResponse(Call<WeatherResult> call, Response<WeatherResult> response) {
-                        tvResult = "Budapest";
-                        Log.d("TVRESULT", tvResult);
 
-                        weatherResult = response.body();
+        Call<WeatherResult> call = weatherApi.getWeatherBudapest(cityName, units, appid);
+        call.enqueue(new Callback<WeatherResult>() {
+            @Override
+            public void onResponse(Call<WeatherResult> call, Response<WeatherResult> response) {
+                tvResult = "Budapest";
 
-                        ViewPager pager = (ViewPager) findViewById(R.id.pager);
-                        pager.setAdapter(new MainPagerAdapter(getSupportFragmentManager()));
-                        //tvResult.setText("" + response.body().getMain().getTemp());
-                    }
-                    @Override
-                    public void onFailure(Call<WeatherResult> call, Throwable t) {
-                        Toast.makeText(WeatherDetails.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-                        Log.d("FAILURE", tvResult);
-                    }
+                weatherResult = response.body();
 
-                });
+                ViewPager pager = (ViewPager) findViewById(R.id.pager);
+                pager.setAdapter(new MainPagerAdapter(getSupportFragmentManager()));
+            }
 
-        /////FRAGMENT
-//        Log.d("FRAGMENT", tvResult);
-//        ViewPager pager = (ViewPager) findViewById(R.id.pager);
-//        pager.setAdapter(new MainPagerAdapter(getSupportFragmentManager()));
+            @Override
+            public void onFailure(Call<WeatherResult> call, Throwable t) {
+                Toast.makeText(WeatherDetails.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.d("FAILURE", tvResult);
+            }
 
-        /////END FRAGMENT
+        });
+
+
     }
-    ///END TRYING FOR DATA /////
 
 
     private WeatherResult weatherResult = null;

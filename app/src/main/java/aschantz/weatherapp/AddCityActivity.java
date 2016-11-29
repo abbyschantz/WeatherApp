@@ -32,7 +32,6 @@ public class AddCityActivity extends AppCompatActivity {
         }
 
 
-
         Button btnSave = (Button) findViewById(R.id.btnAddCity);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override

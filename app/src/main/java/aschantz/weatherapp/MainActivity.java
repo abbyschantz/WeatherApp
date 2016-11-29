@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     public void openWeatherDetailsActivity(View view) {
         Intent intent = new Intent();
         intent.setClass(MainActivity.this, WeatherDetails.class);
-        intent.putExtra("cityName","Budapest");
+        intent.putExtra("cityName", "Budapest");
         startActivity(intent);
     }
 
@@ -60,47 +60,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
-    /////////////////////THIS IS WORKING //////////////////////
-//    private TextView tvResult;
-//    private String cityName = "Budapest";
-//    private String units = "imperial";
-//    private String appid = "301a264cbcf2c4b671a784dfb80413d9";
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//
-//
-//        //create a retrofit object that reps one server communication
-//        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://api.openweathermap.org").
-//                addConverterFactory(GsonConverterFactory.create()).build();
-//        final WeatherApi weatherApi = retrofit.create(WeatherApi.class);
-//
-//        tvResult = (TextView) findViewById(R.id.tvResult);
-//        final EditText etMoney = (EditText) findViewById(R.id.etMoney);
-//        Button btnGetRates = (Button) findViewById(R.id.btnGetRates);
-//        btnGetRates.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Call<WeatherResult> call = weatherApi.getWeatherBudapest(cityName, units, appid);
-//                call.enqueue(new Callback<WeatherResult>() {
-//                    @Override
-//                    public void onResponse(Call<WeatherResult> call, Response<WeatherResult> response) {
-//                        tvResult.setText("" + response.body().getMain().getTemp());
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<WeatherResult> call, Throwable t) {
-//                        Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//            }
-//        });
-//    }
-
-    ///////// END THIS IS WORKING ////////////
 }
 

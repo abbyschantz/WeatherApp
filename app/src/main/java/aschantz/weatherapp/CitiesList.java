@@ -91,8 +91,8 @@ public class CitiesList extends AppCompatActivity implements EditInferface {
                                 Toast.makeText(CitiesList.this, getString(R.string.txt_about), Toast.LENGTH_LONG).show();
                                 break;
                             case R.id.action_help:
-                                //showSnackBarMessage(getString(R.string.txt_help));
                                 drawerLayout.closeDrawer(GravityCompat.START);
+                                Toast.makeText(CitiesList.this, getString(R.string.help), Toast.LENGTH_LONG).show();
                                 break;
 
                         }

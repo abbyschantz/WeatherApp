@@ -33,15 +33,15 @@ public class FragmentTwo extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_two, null);
         WeatherDetails activity = (WeatherDetails) getActivity();
-        String minTemp = ""+activity.getWeatherResult().getMain().getTempMin()+"°";
-        String maxTemp = ""+activity.getWeatherResult().getMain().getTempMax()+"°";
-        String currentTemp = ""+activity.getWeatherResult().getMain().getTemp()+"°";
+        String minTemp = "" + activity.getWeatherResult().getMain().getTempMin() + "°";
+        String maxTemp = "" + activity.getWeatherResult().getMain().getTempMax() + "°";
+        String currentTemp = "" + activity.getWeatherResult().getMain().getTemp() + "°";
 
-        String humidity = ""+activity.getWeatherResult().getMain().getHumidity()+"%";
-        String pressure = getString(R.string.pressure)+activity.getWeatherResult().getMain().getPressure();
-        String lon = getString(R.string.lon)+activity.getWeatherResult().getCoord().getLon();
-        String lat = getString(R.string.lat)+activity.getWeatherResult().getCoord().getLat();
-        String wind = ""+activity.getWeatherResult().getWind().getSpeed();
+        String humidity = "" + activity.getWeatherResult().getMain().getHumidity() + "%";
+        String pressure = getString(R.string.pressure) + activity.getWeatherResult().getMain().getPressure();
+        String lon = getString(R.string.lon) + activity.getWeatherResult().getCoord().getLon();
+        String lat = getString(R.string.lat) + activity.getWeatherResult().getCoord().getLat();
+        String wind = "" + activity.getWeatherResult().getWind().getSpeed();
 
         Integer sunriseStamp = activity.getWeatherResult().getSys().getSunrise();
         Integer sunsetStamp = activity.getWeatherResult().getSys().getSunset();
@@ -59,26 +59,21 @@ public class FragmentTwo extends Fragment {
         TextView humidityResult = (TextView) rootView.findViewById(R.id.tvHumidityResult);
         humidityResult.setText(humidity);
 
-        String dtConverted = ""+convertDate(dateResult, date);
+        String dtConverted = "" + convertDate(dateResult, date);
         TextView dtResult = (TextView) rootView.findViewById(R.id.tvDt);
         dtResult.setText(dtConverted);
 
-        String sunset = ""+convertDate(sunriseStamp, timeAMPM);
+        String sunset = "" + convertDate(sunriseStamp, timeAMPM);
         TextView sunsetResult = (TextView) rootView.findViewById(R.id.tvSunriseResult);
         sunsetResult.setText(sunset);
 
-        String sunrise = ""+convertDate(sunsetStamp, timeAMPM);
+        String sunrise = "" + convertDate(sunsetStamp, timeAMPM);
         TextView sunriseResult = (TextView) rootView.findViewById(R.id.tvSunsetResult);
         sunriseResult.setText(sunrise);
 
         TextView windResult = (TextView) rootView.findViewById(R.id.tvWindResult);
         windResult.setText(wind);
 
-        //TextView lonResult = (TextView) rootView.findViewById(R.id.tvLonResult);
-        //lonResult.setText(lon);
-
-        //TextView latResult = (TextView) rootView.findViewById(R.id.tvLatResult);
-        //latResult.setText(lat);
 
         String cityNameResult = activity.getWeatherResult().getName();
         TextView tvCityName = (TextView) rootView.findViewById(R.id.tvCityName);
@@ -90,12 +85,11 @@ public class FragmentTwo extends Fragment {
 
     private String convertDate(Integer timestamp, String dateType) {
         try {
-            long timestampLong = Long.valueOf(timestamp)*1000;
+            long timestampLong = Long.valueOf(timestamp) * 1000;
             DateFormat dateTime = new SimpleDateFormat(dateType);
             Date dateTimestamp = (new Date(timestampLong));
             return dateTime.format(dateTimestamp);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             return getString(R.string.na);
         }
     }

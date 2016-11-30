@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:gravity="bottom"
-                android:textSize="35sp" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/tvCurrentTempResult"
@@ -50,14 +50,14 @@
                 android:layout_gravity="bottom"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
-                android:textSize="80sp" />
+                android:textSize="60sp" />
 
             <TextView
                 android:id="@+id/tvMaxTempResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:textSize="35sp" />
+                android:textSize="30sp" />
 
         </LinearLayout>
 

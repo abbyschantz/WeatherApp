@@ -42,15 +42,15 @@ public class FragmentOne extends Fragment {
         Log.d("desc", desc);
         Integer dateResult = activity.getWeatherResult().getDt();
 
+        Integer tempInt = (int) Math.round(tempDouble);
+
         TextView tvTemp = (TextView) rootView.findViewById(R.id.tvCurrentTempResult);
-        tvTemp.setText(tempResult + "°");
+        tvTemp.setText(tempInt + "°");
 
         TextView descResult = (TextView) rootView.findViewById(R.id.descResult);
         descResult.setText(desc);
 
-        if (tempDouble > 75.00) {
-            tvTemp.setTextColor(getResources().getColor(R.color.colorAccent));
-        }
+
         String cityNameResult = activity.getWeatherResult().getName();
         TextView tvCityName = (TextView) rootView.findViewById(R.id.tvCityName);
         tvCityName.setText(cityNameResult);
